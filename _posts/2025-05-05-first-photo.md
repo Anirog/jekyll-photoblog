@@ -2,7 +2,7 @@
 layout: default
 title: Mishell
 date: 2025-05-05
-image: /assets/images/sunsets/image1-min.jpg
+image: /assets/images/image1-min.jpg
 alt: A shell with stick on eyes
 camera: Canon EOS R5
 lens: RF24-70mm F2.8 L IS USM
