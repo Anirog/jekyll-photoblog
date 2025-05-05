@@ -1,0 +1,88 @@
+---
+layout: default
+title: Home
+---
+
+<div class="image-container">
+  {% for post in site.posts limit: 1 %}
+    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+  {% else %}
+    <p>No photos yet!</p>
+  {% endfor %}
+</div>
+
+<div class="next-previous-container">
+  {% assign latest_post = site.posts.first %}
+  {% assign previous_post = nil %}
+  {% assign next_post = nil %}
+
+  {% if latest_post %}
+    {% assign previous_post = site.posts[1] %}
+  {% endif %}
+
+  <a href="{% if previous_post %}{{ previous_post.url | relative_url }}{% else %}#{% endif %}">
+    <div class="previous-container {% if previous_post %}{% else %}disabled{% endif %}">
+      <div class="previous-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#ffffff" viewBox="0 0 256 256">
+          <path d="M168.49,199.51a12,12,0,0,1-17,17l-80-80a12,12,0,0,1,0-17l80-80a12,12,0,0,1,17,17L97,128Z"></path>
+        </svg>
+      </div>
+      <div class="previous-day-text">
+        Previous day
+      </div>
+    </div>
+  </a>
+
+  <a href="{% if next_post %}{{ next_post.url | relative_url }}{% else %}#{% endif %}">
+    <div class="next-container {% if next_post %}{% else %}disabled{% endif %}">
+      <div class="next-day-text">
+        Next day
+      </div>
+      <div class="next-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#ffffff" viewBox="0 0 256 256">
+          <path
+            d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z">
+          </path>
+        </svg>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+<div class="title-date-container">
+  {% for post in site.posts limit: 1 %}
+    <div class="image-title-container">
+      <div class="image-title-text">
+        {{ post.title }}
+      </div>
+    </div>
+    <div class="image-date-container">
+      <div class="image-date-text">
+        {{ post.date | date: "%-d %B %Y" }}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="camera-lens-exif-container">
+  {% for post in site.posts limit: 1 %}
+    <div class="camera-container">
+      <div class="camera-text">
+        <span class="camera-text-light">Camera:</span> {{ post.camera }}
+      </div>
+    </div>
+
+    <div class="lens-container">
+      <div class="lens-text">
+        <span class="camera-text-light">Lens:</span> {{ post.lens }}
+      </div>
+    </div>
+
+    <div class="exif-container">
+      <div class="exif-text">
+        <span class="aperture-text">{{ post.aperture }}</span> <span class="shutter-text">{{ post.shutter }}</span> {{ post.iso }}
+      </div>
+    </div>
+  {% endfor %}
+</div>
