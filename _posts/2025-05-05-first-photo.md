@@ -8,5 +8,5 @@ camera: FUJIFILM X100S
 lens: FUJIFILM @23mm
 aperture: ƒ/4
 shutter: 1/550s
-iso: ISO 800
+iso: 800
 ---

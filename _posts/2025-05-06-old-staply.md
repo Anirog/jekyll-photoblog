@@ -8,5 +8,5 @@ camera: Apple iPhone 6s
 lens: Apple iPhone 6s @34 mm
 aperture: ƒ/2.2
 shutter: 1/33
-iso: ISO ISO 100
+iso: ISO 100
 ---
